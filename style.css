@@ -730,28 +730,33 @@ TECH STACK GRID
   cursor: pointer;
   color: #00ffff;
   transition: transform 0.3s ease;
+  z-index: 999;
 }
 
 .burger:hover {
   transform: scale(1.1);
 }
 
+/* Responsive Navigation */
 @media (max-width: 768px) {
-  .burger {
-    display: block;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
   }
 
   nav ul {
     display: none;
     flex-direction: column;
-    background: rgba(10, 15, 40, 0.95);
     position: absolute;
     top: 70px;
     right: 10px;
+    background: rgba(10, 15, 40, 0.95);
     width: 200px;
-    border-radius: 10px;
     padding: 15px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
   }
 
   nav ul.show {
@@ -760,6 +765,10 @@ TECH STACK GRID
 
   nav ul li {
     margin: 10px 0;
+  }
+
+  .burger {
+    display: block;
   }
 }
 
