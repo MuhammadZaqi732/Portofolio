@@ -307,3 +307,42 @@ const navList = document.querySelector('nav ul');
 burger.addEventListener('click', () => {
   navList.classList.toggle('show');
 });
+
+// Tutup menu otomatis saat klik link navigasi
+const navLinks = document.querySelectorAll('nav ul li a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navList.classList.remove('show');
+  });
+});
+
+// 🌌 Header muncul blur saat scroll
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+  // 🌠 Header sembunyi pas scroll ke bawah, muncul pas scroll ke atas
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+      // Scroll ke bawah
+      header.style.transform = "translateY(-100%)";
+    } else {
+      // Scroll ke atas
+      header.style.transform = "translateY(0)";
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // mencegah nilai negatif
+  });
+});
+
