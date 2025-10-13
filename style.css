@@ -584,3 +584,141 @@ TECH STACK GRID
   transform: scale(1.05);
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
 }
+
+/* 🔹 Fade-in & slide-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔹 Awal semua section disembunyikan */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 🔹 Saat muncul di viewport */
+.fade-section.show {
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* 🌌 Parallax Background Layer */
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
+  overflow: hidden;
+}
+
+/* Lapisan tambahan efek depth */
+.parallax {
+  position: relative;
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+}
+
+/* 🌐 RESPONSIVE DESIGN */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .panel {
+    padding: 20px;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin: 5px 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .slide-content {
+    padding: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .panel.blur-panel {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .cv-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .download-btn a, .cv-btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}

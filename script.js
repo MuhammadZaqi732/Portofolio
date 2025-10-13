@@ -269,3 +269,33 @@ function openSkillTab(evt, tabName) {
   document.getElementById(tabName).classList.add("active");
   evt.currentTarget.classList.add("active");
 }
+
+// 🔹 Animasi fade-in per section
+const fadeSections = document.querySelectorAll('.fade-section');
+
+const appearOptions = {
+  threshold: 0.15, // muncul saat 15% bagian terlihat
+};
+
+const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('show');
+    observer.unobserve(entry.target); // biar cuma sekali animasi
+  });
+}, appearOptions);
+
+fadeSections.forEach(section => {
+  appearOnScroll.observe(section);
+});
+
+// 🌠 Parallax scroll effect
+window.addEventListener("scroll", function () {
+  const scrollTop = window.pageYOffset;
+  const parallaxElements = document.querySelectorAll(".parallax");
+
+  parallaxElements.forEach(el => {
+    const speed = el.getAttribute("data-speed") || 0.3;
+    el.style.transform = `translateY(${scrollTop * speed}px)`;
+  });
+});
