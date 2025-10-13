@@ -722,3 +722,59 @@ TECH STACK GRID
     padding: 8px 15px;
   }
 }
+
+/* 🍔 BURGER MENU */
+.burger {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #00ffff;
+  transition: transform 0.3s ease;
+}
+
+.burger:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: rgba(10, 15, 40, 0.95);
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    width: 200px;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
+/* ✨ Hover Glow Effect */
+.card-grid .panel,
+.tech-card {
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.card-grid .panel:hover,
+.tech-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  border: 1px solid rgba(0, 255, 255, 0.6);
+}
+

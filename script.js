@@ -299,3 +299,12 @@ window.addEventListener("scroll", function () {
     el.style.transform = `translateY(${scrollTop * speed}px)`;
   });
 });
+
+// 🍔 Burger menu toggle
+const burger = document.getElementById('burger');
+const navList = document.querySelector('nav ul');
+
+burger.addEventListener('click', () => {
+  navList.classList.toggle('show');
+});
+
