@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* modern card look (Tailwind classes used in HTML; add a few helpers if needed) */
+.bg-white\/6 { background-color: rgba(255,255,255,0.06); }
+
+/* tech-card small tweak */
+.tech-card i { font-size: 1.6rem; }
+.tech-card p { font-size: .85rem; margin-top: .35rem; }
+
+/* scroll bars (nice thin scrollbar) */
+#commentsScroll {
+  scrollbar-width: thin;
+}
+#commentsScroll::-webkit-scrollbar { width: 8px; }
+#commentsScroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 8px; }
+
+/* group hover overlay for certificate image */
+.group:hover .group-hover\\:opacity-100 { opacity: 1; transition: opacity .2s; }
+
+.tech-card {transition: transform 0.3s ease, box-shadow 0.3s ease;}
+.tech-card:hover {transform: translateY(-5px);box-shadow: 0 4px 15px rgba(255,255,255,0.1);}
+
+footer a {color: #fff;font-size: 1.25rem;}
+footer a:hover {transform: translateY(-3px);}
+
+.skill-tab {@apply px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium transition-all duration-300 hover:bg-sky-500/30;}
+.skill-tab.active {@apply bg-sky-500 text-white shadow-md shadow-sky-500/30;}
+.skill-chips span {@apply px-3 py-1 rounded-full bg-sky-500/20 text-white text-sm transition-all duration-300 hover:bg-sky-500/40 hover:scale-105;}
+.skill-content.hidden {display: none;}
+
+/* Portfolio tabs */
+.tab-btn {background: rgba(255,255,255,0.04);border: 1px solid rgba(255,255,255,0.06);padding: 10px 22px;border-radius: 12px;color: #e6eef8;font-weight: 600;display: inline-flex;align-items: center;gap: 8px;transition: all .25s ease;}
+.tab-btn.active {background: linear-gradient(90deg,#6a11cb,#2575fc);color: white;box-shadow: 0 6px 20px rgba(37,117,252,0.18);}
+.tab-btn:hover { transform: translateY(-4px); }
+
+/* small fade animation for content show */
+.tab-content { animation: fadeIn .35s ease; }
+@keyframes fadeIn {from { opacity: 0; transform: translateY(8px); }to   { opacity: 1; transform: translateY(0); }}
+
+.tab-btn {background: rgba(255,255,255,0.05);color: #d1d5db;padding: 10px 20px;border-radius: 12px;transition: all 0.3s ease;font-weight: 600;}
+.tab-btn:hover {background: rgba(255,255,255,0.1);color: #fff;}
+.tab-btn.active {background: linear-gradient(90deg, #2563eb, #06b6d4);color: #fff;box-shadow: 0 0 10px rgba(37,99,235,0.5);}
+
+.project-card {display: flex;flex-direction: column;justify-content: space-between;height: 100%;background: rgba(255,255,255,0.05);border-radius: 12px;padding: 1rem;transition: all 0.3s ease;}
+.project-card:hover {background: rgba(255,255,255,0.1);transform: translateY(-4px);}
+.project-card img {border-radius: 8px;height: 160px;object-fit: cover;width: 100%;}
+.project-card h4 {font-weight: 700;margin-top: 10px;font-size: 1rem;}
+.project-card p {color: #cbd5e1;font-size: 0.9rem;flex-grow: 1;margin-bottom: 0.75rem;}
+.project-card .actions {display: flex;justify-content: space-between;align-items: center;}
+.demo-btn {color: #38bdf8;text-decoration: none;font-weight: 500;transition: all 0.3s ease;}
+.demo-btn:hover {text-decoration: underline;}
+
+/* Jika demo belum tersedia */
+.disabled-demo {color: #94a3b8;cursor: not-allowed;pointer-events: none;opacity: 0.6;text-decoration: none;}
+#mobile-menu {transform-origin: top;transition: transform 0.25s ease, opacity 0.25s ease;}
+#mobile-menu.hidden {opacity: 0;transform: scaleY(0);}
+#mobile-menu:not(.hidden) {opacity: 1;transform: scaleY(1);}
+#main-header {transition: opacity 0.5s ease, transform 0.5s ease;}
+#navbar {opacity: 0;transform: translateY(-10px);transition: opacity 0.6s ease, transform 0.6s ease;}
+#navbar.show {opacity: 1;transform: translateY(0);}
